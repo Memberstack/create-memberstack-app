@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply border border-transparent rounded-md shadow-lg;
+  }
+
+  .btn-primary {
+    @apply text-sm py-2 px-4 font-medium text-white bg-sky-500 hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-sky-400;
+  }
+
+  .btn-lg {
+    @apply text-base px-8 py-3 md:py-4 md:text-lg md:px-10;
+  }
+
+  .h1 {
+    @apply text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl;
+  }
+  .p {
+    @apply mt-3 max-w-md text-sm sm:text-lg md:mt-5 md:text-xl md:max-w-3xl;
+  }
+}
