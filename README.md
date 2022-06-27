@@ -1,77 +1,52 @@
-# Turborepo starter
+# Create Memberstack App
 
-This is an official Yarn v1 starter turborepo.
+The fastest way to get started with Memberstack and react is by using `create-memberstack-app`. This CLI tool enables you to quickly build Memberstack apps using react. Initializing a project takes only a few seconds and everything set up for you. You can create a new app using the default Memberstack + Next.js template, or by using one of the [official Memberstack examples](https://github.com/Memberstack/create-memberstack/tree/canary/examples). To get started, type the following command in your terminal:
+
+```bash
+npx create-memberstack-app@latest
+# or
+yarn create memberstack-app
+# or
+pnpm create memberstack-app
+```
+
+To create a new app in a specific folder, you can send a name as an argument. For example, the following command will create a new Memberstack app called `crm-app` in a folder with the same name:
+
+```bash
+npx create-memberstack-app@latest crm-app
+# or
+yarn create memberstack-app crm-app
+# or
+pnpm create memberstack-app crm-app
+```
+
+## Options
+
+`create-memberstack-app` comes with the following options:
+
+- **-e, --example [name]|[github-url]** - An example to bootstrap the app with. You can use an example name from the [Create Memberstack repo](https://github.com/Memberstack/create-memberstack/tree/canary/examples) or a GitHub URL. The URL can use any branch and/or subdirectory.
+- **--use-npm** - Explicitly tell the CLI to bootstrap the app using npm. To bootstrap using yarn we recommend to run `yarn create memberstack-app`
+- **--use-pnpm** - Explicitly tell the CLI to bootstrap the app using pnpm. To bootstrap using pnpm we recommend running `pnpm create memberstack-app`
+
+## Why use Create Next App?
+
+`create-next-app` allows you to create a new Next.js app within seconds. It is officially maintained by the creators of Next.js, and includes a number of benefits:
+
+- **Interactive Experience**: Running `npx create-memberstack-app` (with no arguments) launches an interactive experience that guides you through setting up a project.
+- **Tailwind Included**: Tailwind and React make a great combo, so we included it for you!
+- **Offline Support**: Create Memberstack App will automatically detect if you're offline and bootstrap your project using your local package cache.
+- **Support for Examples**: Create Memberstack App can bootstrap your application using an example from our official examples collection (e.g. `npx create-memberstack-app --example with-checkout`).
 
 ## What's inside?
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
+### Default Dependencies
 
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+- `@memberstack/react`: Our official [React Package](https://www.notion.so/memberstack/React-Package-API-79b726ab4daf4fcf9f098e2ed547f521) packed with useful hooks and components for auth, checkout and user management.
+- `@memberstack/admin`: Our official [Admin Package](https://www.notion.so/memberstack/Admin-Package-API-5b9233507d734091bd6ed604fb893bb8) that makes it easy to perform administrative tasks on your Memberstack account
 
 ### Utilities
 
-This turborepo has some additional tools already setup for you:
+Create Memberstack Apps have some additional tools already setup for you:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
+- [Tailwind CSS](https://www.tailwindcss.com/) for utility-first CSS
 - [Prettier](https://prettier.io) for code formatting
-
-## Setup
-
-This repository is used in the `npx create-turbo` command, and selected when choosing which package manager you wish to use with your monorepo (Yarn).
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
-- [Caching](https://turborepo.org/docs/core-concepts/caching)
-- [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
