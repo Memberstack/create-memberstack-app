@@ -1,6 +1,6 @@
 # Create Memberstack App
 
-The fastest way to get started with Memberstack and react is by using `create-memberstack-app`. This CLI tool enables you to quickly build Memberstack apps using react. Initializing a project takes only a few seconds and everything set up for you. You can create a new app using the default Memberstack + Next.js template, or by using one of the [official Memberstack examples](https://github.com/Memberstack/create-memberstack/tree/canary/examples). To get started, type the following command in your terminal:
+The fastest way to get started with Memberstack and react is by using `create-memberstack-app`. This CLI tool enables you to quickly build Memberstack apps using react. Initializing a project takes only a few seconds and everything set up for you. You can create a new app using the default Memberstack + Next.js template, or by using one of the [official Memberstack examples](https://github.com/Memberstack/create-memberstack/tree/main/examples). To get started, type the following command in your terminal:
 
 ```bash
 npx create-memberstack-app@latest
@@ -24,7 +24,7 @@ pnpm create memberstack-app crm-app
 
 `create-memberstack-app` comes with the following options:
 
-- **-e, --example [name]|[github-url]** - An example to bootstrap the app with. You can use an example name from the [Create Memberstack repo](https://github.com/Memberstack/create-memberstack/tree/canary/examples) or a GitHub URL. The URL can use any branch and/or subdirectory.
+- **-e, --example [name]|[github-url]** - An example to bootstrap the app with. You can use an example name from the [Create Memberstack repo](https://github.com/Memberstack/create-memberstack/tree/main/examples) or a GitHub URL. The URL can use any branch and/or subdirectory.
 - **--use-npm** - Explicitly tell the CLI to bootstrap the app using npm. To bootstrap using yarn we recommend to run `yarn create memberstack-app`
 - **--use-pnpm** - Explicitly tell the CLI to bootstrap the app using pnpm. To bootstrap using pnpm we recommend running `pnpm create memberstack-app`
 
