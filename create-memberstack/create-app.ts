@@ -135,7 +135,7 @@ export async function createApp({
     /**
      * Copy the template files to the target directory.
      */
-    await cpy('**', root, {
+    await cpy(['**', '!package.json', '!.env', '!node_modules', '!.next', '!yarn.lock'], root, {
       parents: true,
       cwd: path.join(__dirname, 'templates', template),
       rename: name => {
@@ -144,8 +144,6 @@ export async function createApp({
           case 'env': {
             return '.'.concat(name);
           }
-          // README.md is ignored by webpack-asset-relocator-loader used by ncc:
-          // https://github.com/vercel/webpack-asset-relocator-loader/blob/e9308683d47ff507253e37c9bcbb99474603192b/src/asset-relocator.js#L227
           case 'README-template.md': {
             return 'README.md';
           }

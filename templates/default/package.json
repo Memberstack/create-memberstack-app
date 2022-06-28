@@ -1,0 +1,25 @@
+{
+  "name": "next-template-default",
+  "version": "0.1.0",
+  "description": "testing template for nextjs x memberstack",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "clean": "rm -rf node_modules && rm -rf .next"
+  },
+  "dependencies": {
+    "@headlessui/react": "*",
+    "@heroicons/react": "*",
+    "@memberstack/react": "*",
+    "@tailwindcss/forms": "^0.5.2",
+    "next": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "autoprefixer": "*",
+    "postcss": "*",
+    "tailwindcss": "*"
+  }
+}

@@ -43,7 +43,16 @@ const getProjectConfig = (
 
 const projectDeps: Record<string, string[]> = {
   widget: ['@vitejs/plugin-react', 'vite'],
-  default: ['react', 'react-dom', 'next', 'axios', '@memberstack/react', '@memberstack/admin'],
+  default: [
+    'react',
+    'react-dom',
+    'next',
+    'axios',
+    '@memberstack/react',
+    '@memberstack/admin',
+    '@headlessui/react',
+    '@heroicons/react',
+  ],
 };
 
 const projectDevDeps: Record<string, string[]> = {

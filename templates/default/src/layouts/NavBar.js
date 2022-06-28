@@ -1,17 +1,20 @@
-import Link from 'next/link';
-import { useAuth, useMemberstackModal } from '@memberstack/react';
 import msLogo from '@/app/assets/memberstack-logo.svg';
+import { useAuth, useMemberstackModal } from '@memberstack/react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const NavBar = () => {
+const NavBar = ({ color = 'bg-slate-900' }) => {
   const { signOut, isLoggedIn } = useAuth();
   const { openModal, hideModal } = useMemberstackModal();
   return (
-    <header className='bg-slate-900'>
+    <header className={color}>
       <nav className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' aria-label='Top'>
         <div className='w-full py-4 flex items-center justify-between'>
           <div className='flex items-center'>
             <Link href='/'>
-              <img className='h-8 w-auto' src={msLogo} alt='memberstack logo' />
+              <div className='h-8 w-full' style={{ maxWidth: '50px' }}>
+                <Image src={msLogo} alt='Memberstack logo' />
+              </div>
             </Link>
           </div>
           <div className='ml-10'>
