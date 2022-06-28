@@ -5,19 +5,12 @@ import task from 'tasuku';
 
 const root: string = process.env.PWD || '';
 const templatesDir = path.join(root, 'templates');
-const destination = path.join(root, 'create-memberstack', 'dist', 'templates');
-
-interface Template {
-  name: string;
-  copyPattern: string[];
-  destination: string;
-  cwd: string;
-}
+const destination = path.join(root, 'dist', 'templates');
 
 const templates = [
   {
     name: 'default',
-    copyPattern: ['**', '!package.json', '!.env', '!node_modules', '!.next', '!yarn.lock'],
+    copyPattern: ['**', '!package.json', '!.env', '!node_modules', '!.next', '!yarn.lock', '!.swc'],
     destination: path.join(destination, 'default'),
     cwd: path.join(root, 'templates', 'default'),
   },
@@ -43,9 +36,7 @@ async function copyTemplates(): Promise<void> {
         });
       });
     },
-    {
-      concurrency: 2, // Number of tasks to run at a time
-    }
+    { concurrency: 2 }
   );
   api.clear(); // Clear output
 }

@@ -1,35 +1,61 @@
 {
-  "name": "root",
-  "version": "0.0.0",
-  "workspaces": [
-    "create-memberstack",
-    "examples/*",
-    "templates/*"
+  "name": "create-memberstack-app",
+  "version": "0.1.0",
+  "description": "Create Memberstacked-powered React apps.",
+  "license": "MIT",
+  "author": "Nicolas Angelo",
+  "bin": {
+    "cma": "./dist/index.js",
+    "create-memberstack-app": "./dist/index.js"
+  },
+  "files": [
+    "dist/**"
   ],
   "scripts": {
-    "dev:next-template": "yarn workspace next-template-default dev",
-    "dev:cma": "yarn workspace create-memberstack-app dev",
     "copy:templates": "ts-node ./scripts/copy-templates.ts",
+    "build": "tsup src/index.ts --format cjs --minify --onSuccess \"yarn run copy:templates\"",
+    "dev": "tsup src/index.ts --format cjs --watch --onSuccess \"yarn run copy:templates\"",
+    "start": "node dist/index.js",
+    "test": "yarn -v",
     "format": "prettier --write . --cache",
-    "clean": "rm -rf node_modules",
-    "clean:all": "yarn workspaces foreach run clean"
+    "clean": "rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
+    "@types/async-retry": "1.4.2",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/node": "^12.6.8",
+    "@types/prompts": "2.0.1",
+    "@types/rimraf": "3.0.0",
+    "@types/tar": "4.0.3",
+    "@types/validate-npm-package-name": "3.0.0",
+    "async-retry": "1.3.1",
+    "chalk": "2.4.2",
+    "commander": "2.20.0",
+    "cpy": "7.3.0",
     "cpy-cli": "^4.1.0",
-    "listr2": "^4.0.5",
-    "prettier": "latest",
+    "cross-spawn": "6.0.5",
+    "got": "10.7.0",
+    "prompts": "2.1.0",
     "rimraf": "3.0.0",
+    "tar": "4.4.10",
+    "tsup": "^6.1.2",
+    "update-check": "1.5.4",
+    "validate-npm-package-name": "3.0.0",
+    "prettier": "latest",
     "tasuku": "^2.0.0",
     "ts-node": "^10.8.1",
-    "@types/node": "^12.6.8",
     "typescript": "^4.6.4"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Memberstack/create-memberstack.git"
   },
+  "homepage": "https://github.com/Memberstack/create-memberstack/tree/main/#readme",
+  "bugs": {
+    "url": "https://github.com/Memberstack/create-memberstack/issues"
+  },
   "engines": {
     "node": ">=14.0.0"
   },
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@1.22.17"
 }
